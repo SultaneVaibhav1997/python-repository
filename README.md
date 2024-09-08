@@ -184,26 +184,6 @@ The CPU understands only binary language (1 & 0).
        - **Heap**: Contains actual objects (unnamed location; accessed using references).
     2. **Code Segment**: Contains instructions.
 
-- **Memory Units**:
-  - Smallest unit: Bit
-  - 8 bits = 1 byte
-  - 1024 bytes = 1 KB
-  - 1024 KB = 1 MB
-  - 1024 MB = 1 GB
-  - 1024 GB = 1 TB
-
-  Example: 4 GB RAM
-
-  ```
-  4 GB = 2 x 2 x 1024 MB
-  4 GB = 2 x 2 x 1024 x 1024 KB
-  4 GB = 2 x 2 x 1024 x 1024 x 1024 B
-  4 GB = 2^(1 + 1 + 10 + 10 + 10) B
-  4 GB = 2^32 B
-  ```
-
-- Each memory location has a physical address, e.g., `0X12AB:32FE`.
-
 ## Variables in Python
 
 - **Syntax**:
