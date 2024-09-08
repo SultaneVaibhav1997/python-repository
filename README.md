@@ -1,189 +1,273 @@
+Here's your content converted into Markdown format for a GitHub README file:
+
 ```markdown
-### IPO Cycle
-The Input-Process-Output (IPO) cycle is a framework for understanding how computers handle tasks.
+## IPO Cycle
+
 ```
-**Input → Process → Output**
-```
+Input ----> Process ----> Output
              ^
              |
              |
            Memory
 ```
 
-**CPU:** Central Processing Unit
+## CPU: Central Processing Unit
 
-**Memory:**
-- Classified based on accessibility by the CPU:
-  1. **Primary Memory:** Accessible by the CPU, fast, and expensive (e.g., ROM, RAM).
-  2. **Secondary Memory:** Not accessible by the CPU, slower, and inexpensive (e.g., HDD, SSD, Pen Drive, Memory Card, DVD, CD, floppy).
+### Memory Classification
 
-- Classified based on content retention w.r.t. power supply:
-  1. **Volatile Memory:** Content is lost when power is off (e.g., RAM).
-  2. **Non-Volatile Memory:** Content persists regardless of power (e.g., ROM, HDD, SSD, Pen Drive, Memory Card, DVD, CD, floppy).
+1. **Primary Memory**
+   - A memory that is accessible by the CPU.
+   - Fast and expensive.
+   - Examples: ROM, RAM.
 
-**Example:**
-When you install MS Word, it resides in secondary storage.
+2. **Secondary Memory**
+   - A memory that is not accessible by the CPU.
+   - Slow and inexpensive.
+   - Examples: HDD, SSD, Pen Drive, Memory Card, DVD, CD, Floppy.
 
-**System Architecture:**
+### Classification by Content Retention
+
+1. **Volatile Memory**
+   - Power on: Content is in memory; Power off: Content is erased.
+   - Example: RAM.
+
+2. **Non-Volatile Memory**
+   - Content remains in memory regardless of power status.
+   - Examples: ROM, HDD, SSD, Pen Drive, Memory Card, DVD, CD, Floppy.
+
+## Software Installation
+
+When you install software like MS-Word, it resides in secondary storage.
+
 ```
 CPU <-----> RAM <----> Secondary Storage
 ```
 
-### Machine & Assembly Language
-- The CPU understands **binary language** (1 & 0), also called **machine language**:
+## CPU Language
+
+The CPU understands only binary language (1 & 0).
+
+- **Machine Language**
+  - C: `0100 1101`
+  - H: `0100 0001`
+  - I: `0100 1111`
+  - T: `0100 0001`
+  - K: `0100 1001`
+  - A: `0100 1111`
+  - R: `0100 0101`
+  - A: `0100 1000`
+
+- **Assembly Language**
+  - ADD: `10001010`
+  - Assembly Language --> Assembler --> Machine Language
+
+- **High-Level Languages (e.g., C/C++, Python)**
+  - Source code in human-readable languages --> Compiler/Interpreter --> Machine Code
+
+## Compiler vs Interpreter
+
+### Compiler
+
+1. Fast.
+2. Generates binary code (machine code) that can be saved and reused.
+3. Less secure.
+4. Requires less memory.
+5. Converts entire source code into machine code at once.
+6. Compilation stops immediately if errors are present, and no compiled file is generated.
+
+   Example: C, C++, Java
+
+   ```
+   C/C++ ---> Compilation ---> .exe/.bin (saved in HDD)
+   ```
+
+   Double-click on `.exe/.bin` file to run.
+
+### Interpreter
+
+1. Slow.
+2. Generated binary code cannot be saved; the program must be interpreted each time.
+3. More secure.
+4. Requires more memory.
+5. Converts source code into machine code line by line.
+6. Stops immediately if errors are present, but the code before the error executes.
+
+   Example: Java, Python, JavaScript
+
+   ```
+   python ---> Interpret ---> Output
+   ```
+
+## Python Introduction
+
+- **`print()`**: Used to print content on the output window (console).
+  - Example:
+    ```python
+    print("Hello World")
+    print(10)
+    print(1.5)
+    print(True)
+    ```
+
+    **Output:**
+    ```
+    Hello World
+    10
+    1.5
+    True
+    ```
+
+  - **Using `end` parameter**:
+    ```python
+    print("Chitkara", end="~")
+    print("University", end=":")
+    print("Punjab")
+    print(2024)
+    ```
+
+    **Output:**
+    ```
+    Chitkara~University:Punjab
+    2024
+    ```
+
+  - **Using `sep` parameter**:
+    ```python
+    print("bengaluru", "Karnataka", "India", sep = ", ")
+    print(20, 24, sep = "")
+    ```
+
+    **Output:**
+    ```
+    bengaluru, Karnataka, India
+    2024
+    ```
+
+  - **Code Example**:
+    ```python
+    print(1,2,3,4,5)
+    print(6,7,8)
+    ```
+
+    **Output:**
+    ```
+    1 2 3 4 5
+    6 7 8
+    ```
+
+  - **Code Example**:
+    ```python
+    print("A", 1, True, sep = " : ", end = "$")
+    print(False, 9, "X", sep = " - ")
+    ```
+
+    **Output:**
+    ```
+    A : 1 : True$False - 9 - X
+    ```
+
+## Comments in Python
+
+- Used for human understanding.
+- Machine does not process comments.
+- Comments start with `#`.
+- Single-line comments.
+- Multi-line comments can be done using `#` at the beginning of each line or multi-line strings (not officially comments).
+
+## Variables in Python
+
+- **Memory Structure**:
+  - RAM is a primary memory, and programs are loaded into RAM for execution.
+  - Address space in RAM is divided into:
+    1. **Data Segment**:
+       - **Stack**: Contains references (named location).
+       - **Heap**: Contains actual objects (unnamed location; accessed using references).
+    2. **Code Segment**: Contains instructions.
+
+- **Memory Units**:
+  - Smallest unit: Bit
+  - 8 bits = 1 byte
+  - 1024 bytes = 1 KB
+  - 1024 KB = 1 MB
+  - 1024 MB = 1 GB
+  - 1024 GB = 1 TB
+
+  Example: 4 GB RAM
+
   ```
-  C: 0100 1101
-  H: 0100 0001
-  I: 0100 1111
-  T: 0100 0001
-  K: 0100 1001
-  A: 0100 1111
-  R: 0100 0101
-  A: 0100 1000
+  4 GB = 2 x 2 x 1024 MB
+  4 GB = 2 x 2 x 1024 x 1024 KB
+  4 GB = 2 x 2 x 1024 x 1024 x 1024 B
+  4 GB = 2^(1 + 1 + 10 + 10 + 10) B
+  4 GB = 2^32 B
   ```
 
-- **Assembly Language** is closer to machine language, using symbolic representations like `ADD`. It's converted into machine code using an **assembler**.
+- Each memory location has a physical address, e.g., `0X12AB:32FE`.
 
-### High-Level Languages (HLL)
-Languages like C, C++, and Python are written in English-like syntax. They are converted into machine code using either a **compiler** or an **interpreter**.
+## Variables in Python
 
-#### Compiler:
-1. Converts the entire source code to machine code at once.
-2. Faster but less secure.
-3. Compilation stops if an error is encountered.
-4. Machine code can be saved and executed multiple times.
-   - E.g., C, C++, Java.
+- **Syntax**:
+  ```python
+  var_name = value
+  ```
 
-#### Interpreter:
-1. Converts code line-by-line.
-2. Slower but more secure.
-3. Code before an error can still be executed.
-4. Requires interpretation every time.
-   - E.g., Python, JavaScript.
+- **Examples**:
+  ```python
+  name = "ABHAY"    # variable-name: name, value: ABHAY
+  age = 18          # variable-name: age, value: 18
+  percentage = 57.25 # variable-name: percentage, value: 57.25
+  isMarried = False # variable-name: isMarried, value: False
+  print(name, age, percentage, sep = " : ")
+  ```
 
-### Python Programming Basics
+  **Output:**
+  ```
+  ABHAY : 18 : 57.25
+  ```
 
-#### `print()` Function:
-- Displays content on the console.
-- Adds a new line automatically after each statement.
+## Data Types in Python
 
-**Examples:**
-```python
-print("Hello World")
-print(10)
-print(1.5)
-print(True)
-```
-Output:
-```
-Hello World
-10
-1.5
-True
-```
+- A data type defines:
+  1. Operations that can be applied.
+  2. Range of values.
 
-**Using `end` Parameter:**
-```python
-print("Chitkara", end="~")
-print("University", end=":")
-print("Punjab")
-```
-Output:
-```
-Chitkara~University:Punjab
-```
+- **Examples**:
+  ```python
+  print(type("Chitkara"))   # <class 'str'>
+  print(type(10))           # <class 'int'>
+  balance = 45.25
+  print(type(balance))     # <class 'float'>
+  ```
 
-**Using `sep` Parameter:**
-```python
-print("bengaluru", "Karnataka", "India", sep=", ")
-```
-Output:
-```
-bengaluru, Karnataka, India
-```
+- **Classification**:
+  - **Number Category**:
+    - `int`: Any non-fractional number.
+    - `float`: Any fractional number.
+    - `boolean`: True or False.
+    - `complex` (Not covered in syllabus).
 
-### Comments in Python
-- Start with `#` and are ignored by the machine.
-- For multiline comments, use `#` at the beginning of each line or use string literals.
+  - **Sequence Category**:
+    - `String`: Anything inside '' or "".
 
-### Variables in Python
-- A variable is a **named memory location** whose value can change.
-- In Python, variables are dynamically typed, meaning their type is assigned based on the value.
+  - **Set Category**:
+    - `set` (Discussed later).
 
-**Examples:**
-```python
-name = "ABHAY"
-age = 18
-percentage = 57.25
-isMarried = False
+  - **None Category**:
+    - `None`: No value.
+
+  - **Mapping Category**:
+    - `Dictionary` (Discussed later).
+
+  - **Dynamic Typing**:
+    ```python
+    a = 10
+    print(type(a))    # <class 'int'>
+    a = 'Hello'
+    print(type(a))    # <class 'str'>
+    a = 4.5
+    print(type(a))    # <class 'float'>
+    ```
+
 ```
 
-### Data Types in Python
-- **int**: Whole numbers.
-- **float**: Decimal numbers.
-- **bool**: `True` or `False`.
-- **str**: String (text).
-- Other types like List, Tuple, Set, and Dictionary are covered later.
-
-### Arithmetic Operators:
-- `+`, `-`, `*`, `/`, `//`, `%`, `**`
-
-**Examples:**
-```python
-print(10 // 3)  # Floor division, output: 3
-print(10 % 3)   # Modulo, output: 1
-print(5 ** 2)   # Exponentiation, output: 25
-```
-
-### Operator Precedence in Python
-1. `()`: Parentheses (highest)
-2. `**`: Exponentiation (right to left)
-3. `*`, `/`, `//`, `%`: Multiplication, Division, Floor Division, Modulo (left to right)
-4. `+`, `-`: Addition, Subtraction (left to right)
-5. `=`: Assignment (lowest)
-
-**Example:**
-```python
-print(2**4 * 8 + 24 + (4 // 3))
-# Output: 153
-```
-
-### Comparison Operators
-- `>`, `<`, `>=`, `<=`, `!=`, `==`
-- Output of these operators is always boolean (`True` or `False`).
-
-**Examples:**
-```python
-print(10 > 5)   # True
-print(10 == 10) # True
-```
-
-### Logical Operators
-- **and**: Both conditions must be true.
-- **or**: At least one condition must be true.
-- **not**: Negates the condition.
-
-**Example:**
-```python
-if age >= 18 and citizenship == 'indian':
-  print("Welcome! Please cast your vote")
-else:
-  print("Sorry! you are not able to vote")
-```
-
-### If-Else Statements
-Python uses indentation to define blocks of code. Conditional statements execute blocks based on the result of a condition.
-
-**Syntax:**
-```python
-if condition:
-  # if block
-else:
-  # else block
-```
-
-### Sequential, Selection, and Iteration Statements
-- **Sequential:** Statements executed in order.
-- **Selection (if, if-else):** Conditions determine which block to execute.
-- **Iteration (while, for):** Repeated execution of code blocks.
-
+You can copy and paste this into your GitHub README file, and it should render properly. If you need any adjustments or additional sections, just let me know!
