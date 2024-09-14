@@ -535,3 +535,243 @@ Python
 
 ---
 
+Here's your provided content, formatted in Markdown for GitHub:
+
+```md
+## Program to Print Sequence: 1 3 5 7 9 11 13 15 17 19
+
+```python
+i = 1
+while i <= 19:
+    print(i, end=' ')
+    i += 2
+```
+
+### Execution Pattern:
+- `i = 1` [1 <= 19: True]
+- `i = 3` [3 <= 19: True]
+- `i = 5` [5 <= 19: True]
+- `i = 7` [7 <= 19: True]
+- `i = 9` [9 <= 19: True]
+- ...
+- `i = 21` [21 <= 19: False]
+
+### Output:
+`1 3 5 7 9 11 13 15 17 19`
+
+---
+
+## Another Solution:
+
+```python
+i = 1
+while i <= 10:
+    print((2 * i - 1), end=' ')
+    i += 1
+```
+
+### Execution Pattern:
+- `i = 1` [1 <= 10: True]
+- `i = 2` [2 <= 10: True]
+- `i = 3` [3 <= 10: True]
+- `i = 4` [4 <= 10: True]
+- ...
+- `i = 11` [11 <= 10: False]
+
+### Output:
+`1 3 5 7 9 11 13 15 17 19`
+
+---
+
+## Program to Print Series: 21 15 10 6 3 1
+
+```python
+i = 21
+d = 6
+while i >= 1:
+    print(i, end=' ')
+    i -= d  # i = i - d
+    d -= 1  # d = d - 1
+```
+
+### Execution Pattern:
+- `i = 21` [21 >= 1: True]
+- `i = 15` [15 >= 1: True]
+- `i = 10` [10 >= 1: True]
+- `i = 6` [6 >= 1: True]
+- `i = 3` [3 >= 1: True]
+- `i = 1` [1 >= 1: True]
+- `i = 0` [0 >= 1: False]
+- `d = 6, 5, 4, 3, 2, 1`
+
+### Output:
+`21 15 10 6 3 1`
+
+---
+
+## Program to Print Series: 21 15 10 6 3 1 0
+
+```python
+i = 21
+d = 6
+while i >= 0 and d >= 0:
+    print(i, end=' ')
+    i -= d  # i = i - d
+    d -= 1  # d = d - 1
+```
+
+### Iterations:
+- First iteration: `21, i = 15, d = 5`
+- Second iteration: `15, i = 10, d = 4`
+- Third iteration: `10, i = 6, d = 3`
+- Fourth iteration: `6, i = 3, d = 2`
+- Fifth iteration: `3, i = 1, d = 1`
+- Sixth iteration: `1, i = 0, d = 0`
+- Seventh iteration: `0, i = 0, d = 0`
+
+### Output:
+`21 15 10 6 3 1 0`
+
+---
+
+## `break` Statement Example:
+
+The `break` statement is used to exit the loop immediately, without waiting for the loop condition to become false.
+
+```python
+i = 1
+while i <= 5:
+    print(i, end=' ')
+    if i == 3:
+        break
+    i += 1
+print("\nBye Bye; I am out of loop")
+```
+
+### Output:
+```
+1 2 3 
+Bye Bye; I am out of loop
+```
+
+---
+
+## Program to Find the First Three Factors of a Given Number
+
+Sample Input: 12  
+Sample Output: `1, 2, 3`
+
+Sample Input: 65  
+Sample Output: `1, 5, 13`
+
+```python
+no = 65  # 12
+i = 1
+fc = 0
+while i <= no:
+    if no % i == 0:
+        # i is a factor of no
+        print(i, end=' ')
+        fc += 1
+        if fc == 3:
+            break
+    i += 1
+```
+
+---
+
+## `continue` Statement Example:
+
+The `continue` statement is used to skip particular iterations when a specific condition is met.
+
+```python
+i = 1
+while i <= 12:
+    if i % 5 == 0:
+        i += 1
+        continue
+    print(i, end=' ')
+    i += 1
+```
+
+### Output:
+`1 2 3 4 6 7 8 9 11 12`
+
+---
+
+## `else` with `while` Loop:
+
+In Python, the `else` block can be used with loops. The body of the `else` block will be executed when the loop condition becomes false. However, if the `break` statement is used to exit the loop, the `else` block will be skipped.
+
+### Example 1:
+
+```python
+i = 1
+while i <= 5:
+    print(i, end=' ')
+    i += 1
+else:
+    print("bye bye")
+```
+
+### Output:
+`1 2 3 4 5 bye bye`
+
+### Example 2:
+
+```python
+i = 1
+while i <= 5:
+    print(i, end=' ')
+    if i == 3:
+        break
+    i += 1
+else:
+    print("bye bye")
+```
+
+### Output:
+`1 2 3`
+
+---
+
+## Program to Check if a Number is Prime
+
+A prime number is a number that has exactly two factors: 1 and the number itself.
+
+### Example of Prime Numbers:
+`2, 3, 5, 7, 11, 13, 17, 19, 23, 29`
+
+A number `n` is a prime number if it is not divisible by any number from 2 to `n - 1`.
+
+```python
+no = 7  # 9
+d = 2
+while d < no:  # 2 3 4 5 6
+    if no % d == 0:
+        print(no, "is not a prime number")
+        break
+    d += 1
+else:
+    print(no, "is a prime number")
+print("Bye bye")
+```
+
+### Output 1:
+```plaintext
+no = 9
+d = 2, 3
+9 is not a prime number
+Bye bye
+```
+
+### Output 2:
+```plaintext
+no = 5
+d = 2, 3, 4, 5
+5 is a prime number
+Bye Bye
+```
+```
+
+
