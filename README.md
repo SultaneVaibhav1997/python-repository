@@ -535,8 +535,6 @@ Python
 
 ---
 
-Here's your provided content, formatted in Markdown for GitHub:
-
 ```md
 ## Program to Print Sequence: 1 3 5 7 9 11 13 15 17 19
 
@@ -772,6 +770,236 @@ d = 2, 3, 4, 5
 5 is a prime number
 Bye Bye
 ```
+
+```md
+## `range()` Function in Python
+
+The format of the `range()` function:
+
+```python
+range(start=0, stop, step=1)
+```
+
+It is used to generate a sequence from `start` to `stop - 1` such that consecutive elements of the sequence are separated by the `step` value.
+
+### Examples:
+
+```python
+print(list(range(5)))  # start = 0, stop = 5, step = 1 [0, 1, 2, 3, 4]
+print(list(range(3, 5)))  # start = 3, stop = 5, step = 1 [3, 4]
+print(list(range(2, 11, 2)))  # start = 2, stop = 11, step = 2 [2, 4, 6, 8, 10]
+print(list(range(11, 1, -2)))  # start = 11, stop = 1, step = -2 [11, 9, 7, 5, 3]
+```
+
+---
+
+## `for` Loop
+
+The general format of the `for` loop:
+
+```python
+for var-name in sequence:
+    body of loop
+```
+
+### Example:
+
+```python
+for i in range(5):
+    print(i, end=' ')
+print("\n")
+
+for i in range(2, 10, 2):
+    print(i, end=' ')
+print("\n")
+
+for i in range(50, 1, -5):
+    print(i, end=' ')
+print("\n")
+
+for ch in 'Masai':
+    print(ch, end=' ')
+print("\n")
+```
+
+### Output:
+
+```plaintext
+0 1 2 3 4 
+
+2 4 6 8 
+
+50 45 40 35 30 25 20 15 10 5 
+
+M a s a i 
+```
+
+### Explanation:
+
+Everything inside double quotes is treated as a string, but `\n` is not. This is because `\n` is an **escape sequence**.
+
+---
+
+## Escape Sequences in Python
+
+- `\n`: new line
+- `\t`: tab
+- `\b`: backspace
+- `\a`: alarm
+
+### Example:
+
+```python
+print("Masai", end='')
+print("\n")  # \n is used to print in the next line
+print("\\n")  # \\n is printed as \n
+print("School", end='')
+```
+
+### Output:
+
+```plaintext
+Masai
+
+\n
+School
+```
+
+---
+
+## Write a Program to Find Factorial of a Given Number
+
+Factorial is the product of all integers from 1 to the given number.
+
+- `factorial(5) = 5 x 4 x 3 x 2 x 1 = 120`
+- `factorial(3) = 3 x 2 x 1 = 6`
+- `factorial(7) = 7 x 6 x 5 x 4 x 3 x 2 x 1 = 5040`
+
+### Using `for` Loop:
+
+```python
+n = 5  # Change to 7, 3
+fact = 1
+for i in range(2, n + 1):
+    fact = fact * i
+print("The factorial of", n, "is", fact)
+```
+
+### Execution Pattern:
+
+- `n = 5`
+- `fact = 1, 1, 2, 6, 24, 120`
+- `i = 1, 2, 3, 4, 5, 6 (False)`
+
+### Output:
+
+```plaintext
+The factorial of 5 is 120
+```
+
+### Another Logic Using `for` Loop:
+
+```python
+n = 5  # Change to 7, 3
+fact = 1
+for i in range(n, 1, -1):
+    fact = fact * i
+print("The factorial of", n, "is", fact)
+```
+
+### Using `while` Loop:
+
+```python
+n = 5  # Change to 7, 3
+fact = 1
+i = 1
+while i <= n:
+    fact = fact * i
+    i += 1
+print("The factorial of", n, "is", fact)
+```
+
+---
+
+## Write a Program to Find Sum of Natural Numbers for a Given Range
+
+### Example 1:
+
+For `start = 1` and `end = 5`:  
+Sum = `1 + 2 + 3 + 4 + 5 = 15`
+
+### Example 2:
+
+For `start = 10` and `end = 13`:  
+Sum = `10 + 11 + 12 + 13 = 46`
+
+### Using `for` Loop:
+
+```python
+start = 1
+end = 5
+sum = 0
+for i in range(start, end + 1):
+    sum = sum + i
+print("The sum of natural numbers from", start, "to", end, "is", sum)
+```
+
+### Using `while` Loop:
+
+```python
+start = 1
+end = 5
+sum = 0
+i = start
+while i <= end:
+    sum = sum + i
+    i += 1
+print("The sum of natural numbers from", start, "to", end, "is", sum)
+```
+
+---
+
+## Write a Program to Find Sum of Digits of a Given Number
+
+### Example 1:
+
+For `n = 1574`:  
+Sum = `1 + 5 + 7 + 4 = 17`
+
+### Example 2:
+
+For `n = 108`:  
+Sum = `1 + 0 + 8 = 9`
+
+### Explanation:
+
+For `n = 1574`:
+
+1. `1574 % 10 = 4`, `1574 // 10 = 157`
+2. `157 % 10 = 7`, `157 // 10 = 15`
+3. `15 % 10 = 5`, `15 // 10 = 1`
+4. `1 % 10 = 1`, `1 // 10 = 0`
+
+### Code:
+
+```python
+n = 1574
+sum = 0
+while n != 0:
+    sum = sum + n % 10  # sum += (n % 10)
+    n = n // 10  # n //= 10
+print("The sum of digits is", sum)
+```
+
+### Execution Pattern:
+
+- `n = 1574 [True]`, `157 [True]`, `15 [True]`, `1 [True]`, `0 [False]`
+- `sum = 0, 4, 11, 16, 17`
+
+### Output:
+
+```plaintext
+The sum of digits is 17
 ```
 
 
