@@ -1001,5 +1001,199 @@ print("The sum of digits is", sum)
 ```plaintext
 The sum of digits is 17
 ```
+```markdown
+## Nested Loop: Loop inside Another Loop
 
+A loop inside another loop is called a nested loop. For each iteration of the outer loop, the inner loop is executed from the beginning.
+
+```python
+i = 1
+while i <= 3:  # Outer loop
+    j = 1
+    while j <= 3:  # Inner/Nested loop
+        print(i + j, end=' ')
+        j += 1
+    print()  # Inserts a new line
+    i += 1
+print("Bye Bye")
+```
+
+### Execution
+
+- `i = 1` [1 <= 3: True]
+  - `j = 1` [1 <= 3: True]
+  - `j = 2` [2 <= 3: True]
+  - `j = 3` [3 <= 3: True]
+  - `j = 4` [4 <= 3: False]
+- `i = 2` [2 <= 3: True]
+  - `j = 1` [1 <= 3: True]
+  - `j = 2` [2 <= 3: True]
+  - `j = 3` [3 <= 3: True]
+  - `j = 4` [4 <= 3: False]
+- `i = 3` [3 <= 3: True]
+  - `j = 1` [1 <= 3: True]
+  - `j = 2` [2 <= 3: True]
+  - `j = 3` [3 <= 3: True]
+  - `j = 4` [4 <= 3: False]
+- `i = 4` [4 <= 3: False]
+
+**Output:**
+```
+2 3 4 
+3 4 5 
+4 5 6 
+Bye Bye
+```
+
+### Another Example
+
+```python
+i = 3
+while i >= 1:
+    j = 1
+    while j <= i:
+        print(j, end=' ')
+        j += 1
+    print()
+    i -= 1
+```
+
+**Output:**
+```
+1 2 3 
+1 2 
+1 
+```
+
+---
+
+## Pattern Drawing Example 1
+
+Print the following pattern:
+```
+1
+12
+123
+1234
+12345
+```
+
+### Explanation
+
+- Outer loop handles the rows.
+- Inner loop handles the columns, printing numbers from 1 to the current row number.
+
+```python
+r = 1  # Variable for rows
+while r <= 5:  # Outer loop for rows
+    c = 1  # Variable for columns
+    while c <= r:  # Inner loop for columns
+        print(c, end='')
+        c += 1
+    print()  # New line after each row
+    r += 1
+```
+
+### Execution
+
+- `r = 1` [1 <= 5: True]
+  - `c = 1` [1 <= 1: True], `c = 2` [2 <= 1: False]
+- `r = 2` [2 <= 5: True]
+  - `c = 1` [1 <= 2: True], `c = 2` [2 <= 2: True], `c = 3` [3 <= 2: False]
+- ...
+
+**Output:**
+```
+1
+12
+123
+1234
+12345
+```
+
+### Solution Using `for` Loop
+
+```python
+for r in range(1, 6):  # r = 1, 2, 3, 4, 5
+    for c in range(1, r + 1):
+        print(c, end='')
+    print()
+```
+
+---
+
+## Pattern Drawing Example 2
+
+Print the following pattern:
+```
+12345
+1234
+123
+12
+1
+```
+
+### Explanation
+
+- Outer loop handles the rows.
+- Inner loop prints numbers from 1 to `(6 - row)`.
+
+```python
+r = 1  # Variable for rows
+while r <= 5:  # Outer loop for rows
+    c = 1
+    while c <= (6 - r):  # Inner loop for columns
+        print(c, end='')
+        c += 1
+    print()
+    r += 1
+```
+
+### Solution Using `for` Loop
+
+```python
+for r in range(1, 6):
+    for c in range(1, 7 - r):
+        print(c, end='')
+    print()
+```
+
+---
+
+## Example: Alternating 0s and 1s
+
+Print the following pattern:
+```
+0
+01
+010
+0101
+01010
+```
+
+### Explanation
+
+- Outer loop controls the rows.
+- Inner loop prints `0` or `1` based on whether the column number is odd or even.
+
+```python
+for r in range(1, 6):  # Rows from 1 to 5
+    for c in range(1, r + 1):  # Columns from 1 to row number
+        print(0, end='') if c % 2 == 1 else print(1, end='')
+    print()
+```
+
+### Explanation of `print()` statement
+
+The statement:
+```python
+print(0, end='') if c % 2 == 1 else print(1, end='')
+```
+is equivalent to:
+```python
+if c % 2 == 1:
+    print(0, end='')
+else:
+    print(1, end='')
+```
 
