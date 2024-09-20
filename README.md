@@ -398,8 +398,6 @@ print(10 == 10)  # True
    ```python
    if age < 18:
      print("You are a minor")
-   else:
-     print("You are an adult")
    ```
 
 - **`if-else` Statement**
